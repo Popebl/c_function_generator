@@ -1,0 +1,5 @@
+1. provide unify formatting remark for each function
+2. provide standard function according to C99
+3. use {} for function body
+4. generate c source code file *.c
+5. generate header file *.h

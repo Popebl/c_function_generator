@@ -5,6 +5,9 @@ import csv
 from sys import version_info
 from config import csvFile, author_name
 
+from cFunctionDescription import generate_function_description
+from cFunctionBody import generate_function
+from cFunctionHeader import generate_function_header
 class function:
     def __init__(self, func_ldFlag, func_type, func_prefix, func_operate, func_target, func_author):
         self.func_ldFlag = func_ldFlag
@@ -16,7 +19,8 @@ class function:
         self.para_list = []
 
     def get_function_ldFlag(self):
-        return self.ldFlag
+        return self.func_ldFlag
+
     def get_function_type(self):
         return self.func_type
 
@@ -40,15 +44,15 @@ if __name__ == "__main__":
         new_function_obj = \
             function(line[0],line[1],line[2],line[3],line[4],author_name)
         
-        for para_loopCnt in xrange(5,len(line),2):
+        for para_loopCnt in range(5,len(line),2):
             if line[para_loopCnt] and line[para_loopCnt]:
                 para_tuple = (line[para_loopCnt], line[para_loopCnt + 1])
                 new_function_obj.para_list.append(para_tuple)
 
-      func_obj_list.append(new_function_obj)
+        func_obj_list.append(new_function_obj)
 
 
-   for func_obj in func_obj_list:
+    for func_obj in func_obj_list:
         generate_function_description(func_obj)
         generate_function(func_obj)
         generate_function_header(func_obj)

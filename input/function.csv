@@ -1,0 +1,4 @@
+LD_flag,func_type,func_prefix,func_operate,func_target,para1_type,para1,para2_type,para2,para3_type,para3
+,void,popeBL,test,base,int,test1,,,,
+__setction__,int,popeBL,test,section,int,test1,char,test2,,
+__list__,char,popeBL,test,3para,int,test1,char,test2,char,*test3

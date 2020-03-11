@@ -16,5 +16,8 @@ def generate_function(func_obj):
             file_object.write(para_tuple[0] + ' ' + para_tuple[1])
             loop_cnt += 1
 
-        file_object.write(')\n{\n\n}\n')
+        file_object.write(')\n{\n')
+        file_object.write('    ' + func_obj.get_function_type() + ' ret = 0;\n')
+        file_object.write('    return ret;')
+        file_object.write('\n}\n')
 
